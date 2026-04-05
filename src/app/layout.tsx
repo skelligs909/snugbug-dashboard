@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SnugBug Dashboard",
-  description: "Leadership dashboard for SnugBug — manufacturers, waitlist, and outreach tracking",
+  description: "SnugBug manufacturer and waitlist tracker",
 };
 
 export default function RootLayout({
@@ -28,24 +28,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <nav className="border-b border-card-border bg-card-bg px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link href="/" className="text-xl font-bold text-snugbug-red">
-              SnugBug
-            </Link>
-            <div className="flex gap-4 text-sm">
-              <Link href="/" className="text-snugbug-gray hover:text-foreground transition-colors">
-                Manufacturers
-              </Link>
-              <Link href="/waitlist" className="text-snugbug-gray hover:text-foreground transition-colors">
-                Waitlist
-              </Link>
-            </div>
-          </div>
-          <span className="text-xs text-snugbug-gray">Leadership Dashboard</span>
+      <body className="min-h-full flex flex-col text-sm">
+        <nav className="border-b border-gray-200 px-4 py-2 flex items-center gap-4 text-xs">
+          <span className="font-bold text-base">SnugBug</span>
+          <Link href="/" className="text-gray-500 hover:text-black">Manufacturers</Link>
+          <Link href="/waitlist" className="text-gray-500 hover:text-black">Waitlist</Link>
         </nav>
-        <main className="flex-1 p-6 max-w-7xl mx-auto w-full">
+        <main className="flex-1 p-4">
           {children}
         </main>
       </body>
