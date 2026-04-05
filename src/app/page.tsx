@@ -1,5 +1,11 @@
 import { manufacturers } from '@/lib/manufacturers';
 
+const regionTint: Record<string, string> = {
+  Canada: 'bg-blue-50/60',
+  Ireland: 'bg-green-50/60',
+  'Broader Europe': 'bg-purple-50/60',
+};
+
 export default function ManufacturersPage() {
   return (
     <div className="overflow-x-auto">
@@ -17,7 +23,7 @@ export default function ManufacturersPage() {
         </thead>
         <tbody>
           {manufacturers.map(m => (
-            <tr key={m.id} className="border-b border-gray-200 hover:bg-gray-50">
+            <tr key={m.id} className={`border-b border-gray-200 ${regionTint[m.region] ?? ''}`}>
               <td className="px-3 py-2 font-medium whitespace-nowrap">{m.name}</td>
               <td className="px-3 py-2">{m.region}</td>
               <td className="px-3 py-2">{m.location}</td>
